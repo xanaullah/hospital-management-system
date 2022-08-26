@@ -6,6 +6,8 @@ use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Appoinment;
+use PDO;
 
 class HomeController extends Controller
 {
@@ -41,4 +43,30 @@ class HomeController extends Controller
     {
         return view('auth.register');
     }
+    public function appoinment(Request $request){
+        $request->validate([
+        'name'=>'required',
+        'phone'=>'required',
+        'date'=>'required',
+        'doctor'=>'required',
+        'email'=>'required',
+        'phone'=>'required',
+
+    ]);
+$appoinment= new appoinment();
+$appoinment->doctor=$request->doctor;
+$appoinment->name=$request->name;
+$appoinment->phone=$request->phone;
+$appoinment->date=$request->date;
+$appoinment->email=$request->email;
+$appoinment->phone=$request->phone;
+$appoinment->status='In Progress';
+
+if(Auth::id()){
+    $appoinment->user_id=Auth::user()->id;
+}
+
+$appoinment->save();
+return redirect()->back();
+}
 }

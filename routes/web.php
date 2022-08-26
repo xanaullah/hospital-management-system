@@ -22,6 +22,9 @@ Route::get('/' , [HomeController::class  , 'index']);
 Route::get('/add_doctor' , [AdminController::class  , 'addview'])->name('add_doctor_view');
 // Route for upload information doctor
 Route::post('/upload_doctor' , [AdminController::class , 'upload'])->name('upload_doctor');
+// Route For Booking Appoinment
+Route::post('/appoinment' , [HomeController::class , 'appoinment'])->name('appoinment');
+
 Route::get('/login' , [HomeController::class  , 'login'])->name('login');
 Route::get('/register' , [HomeController::class  , 'register'])->name('register');
 Route::middleware([
