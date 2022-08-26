@@ -131,7 +131,7 @@
                             @csrf
                             <div style="padding: 15px;">
                                 <label for="">Doctor Name</label>
-                                <input type="text" style="color: black;" name="doctor">
+                                <input type="text" style="color: black;" name="name">
                             </div>
                             <div style="padding: 15px;">
                                 <label for="">Phone</label>
@@ -151,11 +151,11 @@
 
                             <div style="padding: 15px;">
                                 <label for="">Room No</label>
-                                <input type="text" style="color: black;" name="doctor" name="room" value="{{old('room')}}">
+                                <input type="text" style="color: black;"  name="room" value="{{old('room')}}">
                             </div>
                             <div style="padding: 15px;">
                                 <label for="">Doctor Image</label>
-                                <input type="file" style="color: black;" name="file">
+                                <input type="file" style="color: black;" name="image">
                             </div>
                             <div style="padding: 15px;">
                                 <input type="submit" class="btn btn-success">
