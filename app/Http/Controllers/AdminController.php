@@ -28,5 +28,6 @@ $doctor->name=$request->name;
 $doctor->phone=$request->phone;
 $doctor->speciality=$request->speciality;
 $doctor->save();
+return back();
 }
 }

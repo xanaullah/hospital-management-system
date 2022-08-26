@@ -16,12 +16,11 @@
           </div>
           <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
             <select name="departement" id="departement" class="custom-select">
-              <option value="general">General Health</option>
-              <option value="cardiology">Cardiology</option>
-              <option value="dental">Dental</option>
-              <option value="neurology">Neurology</option>
-              <option value="orthopaedics">Orthopaedics</option>
-            </select>
+            <option value="general">---Select Doctor--</option>
+            @foreach($doctors as $doctor)  
+            <option value="general">{{$doctor->name}}--Specility--{{$doctor->speciality}}</option>
+            @endforeach  
+          </select>
           </div>
           <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
             <input type="text" class="form-control" placeholder="Number..">
