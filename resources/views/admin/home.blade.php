@@ -3,7 +3,8 @@
  @include('admin.header')
   <body>
    @include('admin.body')
-     @include('admin.sidbar')
+   @include('admin.sidbar')
+   @include('admin.navbar1')
    @include('admin.navbar')
     </div>
     @include('admin.footer')
