@@ -17,9 +17,13 @@ $validated = $request->validate([
      'speciality' => 'required',
     'room' => 'required',
 ]);
+$file = $request->file('image');
+$extenstion = $file->getClientOriginalExtension();
+$filename = time().'.'.$extenstion;
+$file->move('uploads/Doctors/', $filename);
 $doctor=new Doctor();
 $doctor->room=$request->room;
-$doctor->image=$request->image;
+$doctor->image=$filename;
 $doctor->name=$request->name;
 $doctor->phone=$request->phone;
 $doctor->speciality=$request->speciality;
