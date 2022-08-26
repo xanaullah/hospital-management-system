@@ -86,7 +86,7 @@
             @auth 
             <x-app-layout>
             </x-app-layout>            
-@else
+              @else
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-3" href="{{Route('login')}}">login</a>
             </li>
@@ -110,8 +110,6 @@
       </div>
     </div>
   </div>
-
-
   <div class="bg-light">
     <div class="page-section py-3 mt-md-n5 custom-index">
       <div class="container">
