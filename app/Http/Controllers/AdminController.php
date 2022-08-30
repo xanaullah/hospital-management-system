@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appoinment;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
 
@@ -30,4 +31,23 @@ $doctor->speciality=$request->speciality;
 $doctor->save();
 return back();
 }
+public function showappoinments(){
+    $data=Appoinment::all();
+    $data=Appoinment::all();
+    $data=Appoinment::all();
+    return view('admin.showappoinments' , compact('data'));
+}
+public function approve($id){
+$data=appoinment::find($id);
+$data->status='Approve';
+$data->save();
+return redirect()->back();
+}
+
+    public function cancalled($id){
+        $data=appoinment::find($id);
+        $data->status='cancalled';
+        $data->save();
+        return redirect()->back();  
+    }
 }

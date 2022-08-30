@@ -24,6 +24,18 @@ Route::get('/add_doctor' , [AdminController::class  , 'addview'])->name('add_doc
 Route::post('/upload_doctor' , [AdminController::class , 'upload'])->name('upload_doctor');
 // Route For Booking Appoinment
 Route::post('/appoinment' , [HomeController::class , 'appoinment'])->name('appoinment');
+//user Appoinment 
+Route::get('/muappoinment' , [HomeController::class ,  'myappoinment'])->name('myappoinment');
+//cancle appoinment 
+Route::get('cancle_appoinment/{id}' , [HomeController::class , 'cancle_appionment'])->name('cancle_appoint');
+//show All Appoiments to the Admin
+Route::get('/showappoinments' , [AdminController::class ,  'showappoinments'])->name('showappoinments');
+//Approve Status
+Route::get('approve/{id}' , [AdminController::class , 'approve'])->name('approve');
+//cancalled Appoinmet by admin
+Route::get('cancalled/{id}' , [AdminController::class , 'cancalled'])->name('cancalled');
+
+
 
 Route::get('/login' , [HomeController::class  , 'login'])->name('login');
 Route::get('/register' , [HomeController::class  , 'register'])->name('register');

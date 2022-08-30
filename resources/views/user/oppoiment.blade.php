@@ -29,7 +29,6 @@
             <textarea name="message" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
           </div>
         </div>
-        <button type="submit" class="">Submit Request</button>
-      </form>
+    <input type="submit" value="submit" class="">      </form>
     </div>
   </div>

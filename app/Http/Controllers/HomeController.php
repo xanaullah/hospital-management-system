@@ -56,6 +56,7 @@ class HomeController extends Controller
 $appoinment= new appoinment();
 $appoinment->doctor=$request->doctor;
 $appoinment->name=$request->name;
+$appoinment->message=$request->message;
 $appoinment->phone=$request->phone;
 $appoinment->date=$request->date;
 $appoinment->email=$request->email;
@@ -65,8 +66,24 @@ $appoinment->status='In Progress';
 if(Auth::id()){
     $appoinment->user_id=Auth::user()->id;
 }
-
 $appoinment->save();
 return redirect()->back();
+}
+
+public function myappoinment(){ 
+    if(Auth::id()){
+        $userid=Auth::user()->id;
+$appoinments=Appoinment::where('user_id' , $userid)->get();
+    return view('user.myappoinment' ,  compact('appoinments'));
+    }
+    else{
+        return redirect()->back();
+    }
+}
+public function cancle_appionment($id){
+    $appoinment=Appoinment::find($id);
+    $appoinment->delete();
+    return redirect()->back();
+
 }
 }
