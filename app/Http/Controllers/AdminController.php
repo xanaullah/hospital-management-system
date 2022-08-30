@@ -50,4 +50,19 @@ return redirect()->back();
         $data->save();
         return redirect()->back();  
     }
+    public function showdoctors(){
+        $doctors=Doctor::all();
+        return view('admin.showdoctors' , compact('doctors'));
+    }
+    public function deletedoctor($id){
+        $doctor=Doctor::find($id);
+        $doctor->delete();
+        return redirect()->back();
+        
+    }
+    public function updatedoctor($id){
+        $data=Doctor::find($id);
+        return vi
+    }
+
 }

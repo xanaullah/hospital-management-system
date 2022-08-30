@@ -34,9 +34,12 @@ Route::get('/showappoinments' , [AdminController::class ,  'showappoinments'])->
 Route::get('approve/{id}' , [AdminController::class , 'approve'])->name('approve');
 //cancalled Appoinmet by admin
 Route::get('cancalled/{id}' , [AdminController::class , 'cancalled'])->name('cancalled');
+//Show aLL Doctor All doctor
+Route::get('showdoctors' , [AdminController::class , 'showdoctors'])->name('showdoctors');
+//update Single Doctor
+route::get('deletedoctor/{id}' , [AdminController::class , 'deletedoctor'])->name('deletedoctor');
 
-
-
+route::get('updatedoctor/{id}' , [AdminController::class , 'updatedoctor'])->name('updatedoctor');
 Route::get('/login' , [HomeController::class  , 'login'])->name('login');
 Route::get('/register' , [HomeController::class  , 'register'])->name('register');
 Route::middleware([
